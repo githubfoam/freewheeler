@@ -1,0 +1,52 @@
+---
+# tasks file for apache
+- name: Update apt cache.
+  apt: update_cache=yes
+  when:
+      - ansible_facts['distribution'] == "Ubuntu"
+# - name: Update repositories cache and install `software-properties-common`
+#   apt:
+#       name: software-properties-common
+#       update_cache: true
+# - name: Add Oracle Java 1.8 repos
+#   apt_repository:
+#       repo: ppa:webupd8team/java
+#       update_cache: true
+#   register: sources_list_result
+# - name: accept oracle license
+#   shell: >
+#     echo "oracle-java8-installer shared/accepted-oracle-license-v1-1
+#     select true" | debconf-set-selections
+#   when: sources_list_result.changed
+# - name: Install Oracle Java 1.8
+#   apt:
+#       name: "{{ packages }}"
+#   vars:
+#       packages:
+#           - oracle-java8-installer
+#           - oracle-java8-set-default
+#           - curl
+#       state: latest
+#       autoclean: true
+# - name: Unarchive the artifact
+#   unarchive:
+#       src: http://repo1.maven.org/maven2/org/onosproject/onos-releases/onos-1.12.0/onos-1.12.0.tar.gz
+#       dest: /tmp
+#       extra_opts: [--strip-components=1]
+#       remote_src: true
+# - name: Mandatory step for all OSes /etc/init.d/onos
+#   command: cp /tmp/init/onos.initd /etc/init.d/onos
+# - name: Additional steps for Systemd based systems  Ubuntu 16, CentOS 7+
+#   command: cp /tmp/init/onos.service /etc/systemd/system/
+# - name: Running systemctl daemon-reload
+#   command: systemctl daemon-reload
+#   when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '16.04'
+# - name: Additional steps for Upstart based systems
+#   service:
+#       name: onos
+#       state: started
+# - name: Wait for port 8181 to become open on the host,the ONOS GUI
+#   wait_for:
+#       port: 8181
+#       delay: 25
+#       state: started

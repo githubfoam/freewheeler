@@ -1,0 +1,4 @@
+---
+- name: Add sdn user
+  user:
+      name: sdn

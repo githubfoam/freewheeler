@@ -1,0 +1,37 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: cosmic
+    image: ubuntu:cosmic
+    # command: /sbin/init
+    capabilities:
+      - SYS_ADMIN
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+provisioner:
+  name: ansible
+  playbooks:
+    create: ../default/create.yml
+    prepare: ../default/prepare.yml
+    converge: ../../tests/test.yml
+    destroy: ../default/destroy.yml
+  config_options:
+    defaults:
+      callback_whitelist: profile_tasks,timer
+  lint:
+    name: ansible-lint
+scenario:
+  name: ubuntu1810
+verifier:
+  name: testinfra
+  # directory: /tests/
+  options:
+    verbose: true
+  lint:
+    name: flake8

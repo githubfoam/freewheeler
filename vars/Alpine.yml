@@ -1,0 +1,7 @@
+---
+# vars for Debian systems
+system_packages:
+  - curl
+  - tar
+  - unzip
+  - zip
