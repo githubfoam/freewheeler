@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: ansible-role-onos
+  role_name: freewheeler
   author: githubfoam
   description: ansible-role-onos
   company: NA
