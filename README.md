@@ -4,18 +4,10 @@ data center as code, data center as compliance
 =========
 
 
-Ansible Role: [![Ansible Role](https://img.shields.io/ansible/role/d/32836.svg?style=plastic)](https://galaxy.ansible.com/githubfoam/onos)  
-Ansible Role: [![Ansible Role](https://img.shields.io/ansible/role/32836.svg)](https://galaxy.ansible.com/githubfoam/onos)  
-
-
 Travis (.com) branch:
-[![Build Status](https://travis-ci.com/githubfoam/ansible-role-onos.svg?branch=badges)](https://travis-ci.com/githubfoam/ansible-role-onos)  
-Travis (.com) molecule testinfra branch:
-[![Build Status](https://travis-ci.com/githubfoam/ansible-role-onos.svg?branch=molecule-testinfra)](https://travis-ci.com/githubfoam/ansible-role-onos)  
-Travis (.com) test branch:
-[![Build Status](https://travis-ci.com/githubfoam/ansible-role-onos.svg?branch=test)](https://travis-ci.com/githubfoam/ansible-role-onos)  
+[![Build Status](https://travis-ci.com/githubfoam/freewheeler.svg?branch=badges)](https://travis-ci.com/githubfoam/freewheeler)    
 Travis (.com) dev branch:
-[![Build Status](https://travis-ci.com/githubfoam/ansible-role-onos.svg?branch=dev)](https://travis-ci.com/githubfoam/ansible-role-onos)  
+[![Build Status](https://travis-ci.com/githubfoam/freewheeler.svg?branch=dev)](https://travis-ci.com/githubfoam/freewheeler)  
 
 
 
@@ -27,7 +19,7 @@ Travis (.com) dev branch:
 Playbook
 ----------------
 
-molecule testinfra branch:
+molecule testinfra :
 
     - MOLECULE_SCENARIO=ubuntu1604
     - MOLECULE_SCENARIO=ubuntu1804
