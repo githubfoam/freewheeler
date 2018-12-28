@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: molecule
+  role_name: ansible-role-onos
   author: githubfoam
   description: ansible role
   company: NA
