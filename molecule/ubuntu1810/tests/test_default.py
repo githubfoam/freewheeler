@@ -1,14 +1,10 @@
 import pytest
 
-
-testinfra_hosts = ["cosmic"]
+testinfra_hosts = ["xenial"]
 
 
 @pytest.mark.parametrize('pkg', [
-  'software-properties-common',
-  'oracle-java8-set-default',
-  'curl',
-  'oracle-java8-installer'
+  'software-properties-common'
 ])
 def test_pkg(host, pkg):
     package = host.package(pkg)

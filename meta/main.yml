@@ -2,7 +2,7 @@
 galaxy_info:
   role_name: ansible-role-onos
   author: githubfoam
-  description: ansible role
+  description: ansible-role-onos
   company: NA
   license: GPLv3
   min_ansible_version: 2.4
