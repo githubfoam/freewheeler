@@ -9,7 +9,27 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions:
+        - cosmic
+        - disco
         - bionic
+        - xenial
+    - name: Debian
+      versions:
+        - jessie
+    - name: Centos
+      versions:
+        - centos76
+        - centos74
+    - name: Fedora
+      versions:
+        - fedora29
+    - name: openSUSE
+      versions:
+        - tumbleweed
+        - leap
+    - name: alpine
+    - name: amazonlinux
+    - name: oraclelinux
   galaxy_tags:
     - molecule
     - testinfra
