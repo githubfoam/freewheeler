@@ -2,8 +2,8 @@
 sudo: required
 language: python
 python:
-  - "3.6.3"
-  # - "2.7"
+  # - "3.6.3"
+  - "2.7"
 env:
   # - MOLECULE_SCENARIO=ubuntu1604
   # - MOLECULE_SCENARIO=ubuntu1804
@@ -24,8 +24,8 @@ services:
 before_install:
   - sudo apt-get -qq update
 install:
-  - virtualenv --python=$(which python3.6.3) envmolecule
-  # - virtualenv --python=$(which python2.7) envmolecule
+  # - virtualenv --python=$(which python3.6.3) envmolecule
+  - virtualenv --python=$(which python2.7) envmolecule
   - source envmolecule/bin/activate
   - pip install -r requirements.txt
 script:
