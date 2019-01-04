@@ -17,8 +17,8 @@ env:
   # - MOLECULE_SCENARIO=oraclelinux
   # - MOLECULE_SCENARIO=opensuseleap
   # - MOLECULE_SCENARIO=opensusetumbleweed
-  # - MOLECULE_SCENARIO=debianjessie
-  - MOLECULE_SCENARIO=photon
+  - MOLECULE_SCENARIO=debianjessie
+  # - MOLECULE_SCENARIO=photon
 services:
   - docker
 before_install:
