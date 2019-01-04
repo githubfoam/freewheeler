@@ -1,32 +1,41 @@
 ---
 sudo: required
+branches:
+  only:
+    - tox-branch
 language: python
 python:
-  - "3.6"
-  # - "2.7"
+  # - "3.6"
+  - "2.7"
 env:
-  - MOLECULE_SCENARIO=ubuntu1604
-  - MOLECULE_SCENARIO=ubuntu1804
-  - MOLECULE_SCENARIO=ubuntu1810
-  - MOLECULE_SCENARIO=ubuntu1904
-  - MOLECULE_SCENARIO=centos76
-  - MOLECULE_SCENARIO=centos74
-  - MOLECULE_SCENARIO=fedora29
-  - MOLECULE_SCENARIO=alpine38
-  - MOLECULE_SCENARIO=amazonlinux
-  - MOLECULE_SCENARIO=oraclelinux
-  - MOLECULE_SCENARIO=opensuseleap
-  - MOLECULE_SCENARIO=opensusetumbleweed
-  - MOLECULE_SCENARIO=debianjessie
-  # - MOLECULE_SCENARIO=photon
+  matrix:
+    # - MOLECULE_SCENARIO=ubuntu1604
+    # - MOLECULE_SCENARIO=ubuntu1804
+    # - MOLECULE_SCENARIO=ubuntu1810
+    # - MOLECULE_SCENARIO=ubuntu1904
+    # - MOLECULE_SCENARIO=centos76
+    # - MOLECULE_SCENARIO=centos74
+    # - MOLECULE_SCENARIO=fedora29
+    # - MOLECULE_SCENARIO=alpine38
+    # - MOLECULE_SCENARIO=amazonlinux
+    # - MOLECULE_SCENARIO=oraclelinux
+    # - MOLECULE_SCENARIO=opensuseleap
+    # - MOLECULE_SCENARIO=opensusetumbleweed
+    - TOX_ENV=py27 MOLECULE_SCENARIO=debianjessie
+    # - MOLECULE_SCENARIO=photon
 services:
   - docker
 before_install:
   - sudo apt-get -qq update
 install:
-  - virtualenv --python=$(which python3.6) envmolecule
-  # - virtualenv --python=$(which python2.7) envmolecule
-  - source envmolecule/bin/activate
+  # - pip install tox
+  - tox --version
+  # Travis provides the python version for each test as TRAVIS_PYTHON_VERSION,
+  # but in the form '3.4', while tox expects 'py34'
+  # If you don't want to rely on an external lib (tox-travis) to do the translation, you can do that manually
+  - tox -e $(echo py$TRAVIS_PYTHON_VERSION | tr -d .)
+  # This works for pypy Source: flask-mongoengine's .travis.yml.
+  # - tox -e $(echo py$TRAVIS_PYTHON_VERSION | tr -d . | sed -e 's/pypypy/pypy/')
   - pip install -r requirements.txt
 script:
   - molecule lint --scenario-name ${MOLECULE_SCENARIO}
