@@ -5,7 +5,7 @@ data center as code, data center as compliance
 
 
 Travis (.com) branch:
-[![Build Status](https://travis-ci.com/githubfoam/freewheeler.svg?branch=badges)](https://travis-ci.com/githubfoam/freewheeler)    
+[![Build Status](https://travis-ci.com/githubfoam/freewheeler.svg?branch=master)](https://travis-ci.com/githubfoam/freewheeler)  
 Travis (.com) dev branch:
 [![Build Status](https://travis-ci.com/githubfoam/freewheeler.svg?branch=dev)](https://travis-ci.com/githubfoam/freewheeler)  
 
