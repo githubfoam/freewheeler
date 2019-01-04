@@ -28,6 +28,7 @@ services:
 before_install:
   - sudo apt-get -qq update
 install:
+  - pip install -r requirements.txt
   # - pip install tox
   - tox --version
   # Travis provides the python version for each test as TRAVIS_PYTHON_VERSION,
@@ -36,7 +37,6 @@ install:
   - tox -e $(echo py$TRAVIS_PYTHON_VERSION | tr -d .)
   # This works for pypy Source: flask-mongoengine's .travis.yml.
   # - tox -e $(echo py$TRAVIS_PYTHON_VERSION | tr -d . | sed -e 's/pypypy/pypy/')
-  - pip install -r requirements.txt
 script:
   - molecule lint --scenario-name ${MOLECULE_SCENARIO}
   - molecule destroy --scenario-name ${MOLECULE_SCENARIO}
