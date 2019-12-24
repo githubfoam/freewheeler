@@ -6,5 +6,5 @@
       - ansible_facts['distribution'] == "Ubuntu"
 - name: Update repositories cache and install `software-properties-common`
   apt:
-     name: software-properties-common
-     update_cache: true
+      name: software-properties-common
+      update_cache: true
