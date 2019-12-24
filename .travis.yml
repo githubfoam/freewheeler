@@ -25,7 +25,7 @@ before_install:
   - sudo apt-get -qq update
 install:
   - virtualenv --python=$(which python3) envmolecule
-  - virtualenv --python=$(which python2) envmolecule
+  # - virtualenv --python=$(which python2) envmolecule
   - source envmolecule/bin/activate
   - pip install -r requirements.txt
 script:
