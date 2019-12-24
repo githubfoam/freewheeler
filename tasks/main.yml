@@ -6,4 +6,5 @@
 - name: tasks file for freewheeler
   include_tasks: "{{ ansible_distribution }}-install.yml"
 - name: configure distro.
-  include_tasks: "configure-{{ ansible_distribution }}.yml"
+  include_tasks: "configure/configure-{{ ansible_distribution }}.yml"
+  # include_tasks: "configure-{{ ansible_distribution }}.yml"
