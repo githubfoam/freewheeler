@@ -9,19 +9,19 @@ python:
   - "2.7"
 env:
   matrix:
-    - TOX_ENV=py27 MOLECULE_SCENARIO=ubuntu1604
-    - TOX_ENV=py27 MOLECULE_SCENARIO=ubuntu1804
-    - TOX_ENV=py27 MOLECULE_SCENARIO=ubuntu1810
+    # - TOX_ENV=py27 MOLECULE_SCENARIO=ubuntu1604
+    # - TOX_ENV=py27 MOLECULE_SCENARIO=ubuntu1804
+    # - TOX_ENV=py27 MOLECULE_SCENARIO=ubuntu1810
     - TOX_ENV=py27 MOLECULE_SCENARIO=ubuntu1904
-    - TOX_ENV=py27 MOLECULE_SCENARIO=centos76
-    - TOX_ENV=py27 MOLECULE_SCENARIO=centos74
-    - TOX_ENV=py27 MOLECULE_SCENARIO=fedora29
-    - TOX_ENV=py27 MOLECULE_SCENARIO=alpine38
-    - TOX_ENV=py27 MOLECULE_SCENARIO=amazonlinux
-    - TOX_ENV=py27 MOLECULE_SCENARIO=oraclelinux
-    - TOX_ENV=py27 MOLECULE_SCENARIO=opensuseleap
-    - TOX_ENV=py27 MOLECULE_SCENARIO=opensusetumbleweed
-    - TOX_ENV=py27 MOLECULE_SCENARIO=debianjessie
+    # - TOX_ENV=py27 MOLECULE_SCENARIO=centos76
+    # - TOX_ENV=py27 MOLECULE_SCENARIO=centos74
+    # - TOX_ENV=py27 MOLECULE_SCENARIO=fedora29
+    # - TOX_ENV=py27 MOLECULE_SCENARIO=alpine38
+    # - TOX_ENV=py27 MOLECULE_SCENARIO=amazonlinux
+    # - TOX_ENV=py27 MOLECULE_SCENARIO=oraclelinux
+    # - TOX_ENV=py27 MOLECULE_SCENARIO=opensuseleap
+    # - TOX_ENV=py27 MOLECULE_SCENARIO=opensusetumbleweed
+    # - TOX_ENV=py27 MOLECULE_SCENARIO=debianjessie
     # - MOLECULE_SCENARIO=photon
 services:
   - docker

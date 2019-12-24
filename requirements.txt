@@ -1,4 +1,4 @@
--c constraints.txt
+#-c constraints.txt
 docker-py
 molecule
 tox
