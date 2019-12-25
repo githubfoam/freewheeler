@@ -3,7 +3,7 @@
 - name: install the latest version of Apache
   dnf:
     name: httpd
-    state: latest
+    state: present
   when:
     - ansible_facts['distribution'] == "Fedora"
     - ansible_facts['distribution_major_version'] == "29"
