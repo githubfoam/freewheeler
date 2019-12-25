@@ -2,7 +2,7 @@
 dummy TOX
 
 
-~~~~
+
 
 Travis (.com) branch:
 [![Build Status](https://travis-ci.com/githubfoam/freewheeler.svg?branch=master)](https://travis-ci.com/githubfoam/freewheeler)  
@@ -16,7 +16,7 @@ Travis (.com) tox-branch branch:
 [![Build Status](https://travis-ci.com/githubfoam/freewheeler.svg?branch=tox-branch)](https://travis-ci.com/githubfoam/freewheeler)  
 
 
-~~~~
+
 
 ~~~~
 
