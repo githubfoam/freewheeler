@@ -53,3 +53,53 @@ An optional section for the role authors
 
 
 ~~~~
+
+upgrade
+~~~~
+
+#add
+
+.travis.yml
+     - TOX_ENV=py27 MOLECULE_SCENARIO=centos77
+
+# Install package (task)
+tasks\CentOS-install.yml
+
+# extend task for specific CentOS versions, 7.7 etc.. (optional)
+tasks\CentOS-install.yml
+when: ansible_distribution == 'CentOS'
+
+
+
+# configure package (task),extend task for specific CentOS versions, 7.7 etc.. (optional)
+
+tasks\configure\configure-CentOS.yml
+
+
+
+# create a directort (copy && rename existing previous distro)
+# testinfra tasks (verify package and configurations)
+
+molecule\centos77
+
+
+# image name and versions from docker hub
+
+molecule\centos77\molecule.yml
+
+platforms:
+  - name: centos77
+    image: centos:7.7.1908
+
+
+# new scenario name same as MOLECULE_SCENARIO name "centos77"
+
+- TOX_ENV=py27 MOLECULE_SCENARIO=centos77
+
+molecule\centos77\molecule.yml
+
+    scenario:
+      name: centos77    
+
+
+~~~~
