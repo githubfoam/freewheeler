@@ -1,10 +1,10 @@
 ---
-- name: "Update all packages"
-  zypper:
-    name: '*'
-    state: present
-  when:
-    - ansible_facts['distribution'] == "openSUSE Tumbleweed"
+# - name: "Update all packages"
+#   zypper:
+#     name: '*'
+#     state: present
+#   when:
+#     - ansible_facts['distribution'] == "openSUSE Tumbleweed"
     # - ansible_facts['distribution_major_version'] == "29"
 
 - name: "Install nmap"
