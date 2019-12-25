@@ -9,13 +9,9 @@ Travis (.com) branch:
 
 Travis (.com) dev branch:
 [![Build Status](https://travis-ci.com/githubfoam/freewheeler.svg?branch=dev)](https://travis-ci.com/githubfoam/freewheeler)  
-Travis (.com) tox-branch branch:
-[![Build Status](https://travis-ci.com/githubfoam/freewheeler.svg?branch=tox-branch)](https://travis-ci.com/githubfoam/freewheeler)  
 
 Travis (.com) tox-branch branch:
 [![Build Status](https://travis-ci.com/githubfoam/freewheeler.svg?branch=tox-branch)](https://travis-ci.com/githubfoam/freewheeler)  
-
-
 
 
 ~~~~
