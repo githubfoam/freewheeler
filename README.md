@@ -1,21 +1,24 @@
 # freewheeler
-data center as code, data center as compliance
+dummy TOX
 
+
+~~~~
 
 Travis (.com) branch:
 [![Build Status](https://travis-ci.com/githubfoam/freewheeler.svg?branch=master)](https://travis-ci.com/githubfoam/freewheeler)  
+
 Travis (.com) dev branch:
 [![Build Status](https://travis-ci.com/githubfoam/freewheeler.svg?branch=dev)](https://travis-ci.com/githubfoam/freewheeler)  
 Travis (.com) tox-branch branch:
 [![Build Status](https://travis-ci.com/githubfoam/freewheeler.svg?branch=tox-branch)](https://travis-ci.com/githubfoam/freewheeler)  
 
+Travis (.com) tox-branch branch:
+[![Build Status](https://travis-ci.com/githubfoam/freewheeler.svg?branch=tox-branch)](https://travis-ci.com/githubfoam/freewheeler)  
 
-
-[![GitHub search hit counter](https://img.shields.io/github/search/githubfoam/ansible-role-onos/goto.svg)](https://github.com/githubfoam/ansible-role-onos)  
-[![GitHub](https://img.shields.io/github/license/githubfoam/ansible-role-onos.svg?style=plastic)](https://github.com/githubfoam/ansible-role-onos)
 
 ~~~~
-dummy TOX
+
+~~~~
 
 ----------------
 
