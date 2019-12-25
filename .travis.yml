@@ -2,16 +2,13 @@
 sudo: required
 language: python
 python:
-  # - "3.8"
   - "3.7"
-  # - "3.6"
-  # - "3.5"
   # - "2.7"
 env:
   # - MOLECULE_SCENARIO=ubuntu1604
   # - MOLECULE_SCENARIO=ubuntu1804
   # - MOLECULE_SCENARIO=ubuntu1810
-  - TOX_ENV=py27 MOLECULE_SCENARIO=ubuntu1904
+  - MOLECULE_SCENARIO=ubuntu1904
   # - MOLECULE_SCENARIO=centos76
   # - MOLECULE_SCENARIO=centos74
   # - MOLECULE_SCENARIO=fedora29
@@ -27,14 +24,10 @@ services:
 before_install:
   - sudo apt-get -qq update
 install:
-  - virtualenv --python=$(which python3) envmolecule3
-  - source envmolecule3/bin/activate
+  - virtualenv --python=$(which python3) envmolecule
+  # - virtualenv --python=$(which python2) envmolecule
+  - source envmolecule/bin/activate
   - pip install -r requirements.txt
-  # - deactivate
-  # - virtualenv --python=$(which python2) envmolecule2
-  # - source envmolecule2/bin/activate
-  # - pip install -r requirements.txt
-  # - deactivate
 script:
   - molecule lint --scenario-name ${MOLECULE_SCENARIO}
   - molecule destroy --scenario-name ${MOLECULE_SCENARIO}
