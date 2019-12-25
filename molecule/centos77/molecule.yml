@@ -7,7 +7,7 @@ lint:
   name: yamllint
 platforms:
   - name: centos77
-    image: centos:7.7.1908s
+    image: centos:7.7.1908
     # capabilities:
     #   - SYS_ADMIN
     # volumes:
