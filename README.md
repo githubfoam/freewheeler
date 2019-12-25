@@ -107,8 +107,9 @@ molecule\centos77\molecule.yml
 
 release watch
 ~~~~
-debian
+
 https://hub.docker.com/_/debian
 https://wiki.debian.org/DebianReleases
 
+https://hub.docker.com/_/ubuntu
 ~~~~
