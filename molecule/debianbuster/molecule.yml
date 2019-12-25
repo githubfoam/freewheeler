@@ -6,8 +6,8 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: stretch
-    image: debian:9.11
+  - name: buster
+    image: debian:10.2
     capabilities:
       - SYS_ADMIN
     volumes:
