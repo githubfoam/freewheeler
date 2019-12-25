@@ -112,4 +112,7 @@ https://hub.docker.com/_/debian
 https://wiki.debian.org/DebianReleases
 
 https://hub.docker.com/_/ubuntu
+
+https://hub.docker.com/_/fedora
+
 ~~~~
