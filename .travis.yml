@@ -5,7 +5,7 @@ python:
   - "3.8"
   - "3.7"
   - "3.6"
-  - "3.5"    
+  - "3.5"
   - "2.7"
 env:
   - MOLECULE_SCENARIO=ubuntu1604
@@ -27,10 +27,14 @@ services:
 before_install:
   - sudo apt-get -qq update
 install:
-  - virtualenv --python=$(which python3) envmolecule
-  - virtualenv --python=$(which python2) envmolecule
-  - source envmolecule/bin/activate
+  - virtualenv --python=$(which python3) envmolecule3
+  - source envmolecule3/bin/activate
   - pip install -r requirements.txt
+  - deactivate
+  - virtualenv --python=$(which python2) envmolecule2
+  - source envmolecule2/bin/activate
+  - pip install -r requirements.txt
+  - deactivate  
 script:
   - molecule lint --scenario-name ${MOLECULE_SCENARIO}
   - molecule destroy --scenario-name ${MOLECULE_SCENARIO}
