@@ -5,7 +5,7 @@ python:
   # - "3.8"
   # - "3.7"
   # - "3.6"
-  - "3.5"
+  # - "3.5"
   - "2.7"
 env:
   # - MOLECULE_SCENARIO=ubuntu1604
@@ -18,7 +18,7 @@ env:
   # - MOLECULE_SCENARIO=centos76
   # - MOLECULE_SCENARIO=centos74
   # - MOLECULE_SCENARIO=fedora29
-  - MOLECULE_SCENARIO=fedora30
+  # - MOLECULE_SCENARIO=fedora30 # testing
   - MOLECULE_SCENARIO=fedora31
   # - MOLECULE_SCENARIO=alpine38
   # - MOLECULE_SCENARIO=amazonlinux
