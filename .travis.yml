@@ -3,6 +3,9 @@ sudo: required
 language: python
 python:
   - "3.8"
+  - "3.7"
+  - "3.6"
+  - "3.5"    
   - "2.7"
 env:
   - MOLECULE_SCENARIO=ubuntu1604
