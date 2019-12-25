@@ -6,13 +6,13 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: photon
-    image: photon:3.0
-    # capabilities:
-    #   - SYS_ADMIN
-    # volumes:
-    #   - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    # privileged: true
+  - name: jessie
+    image: debian:9.11
+    capabilities:
+      - SYS_ADMIN
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
 provisioner:
   name: ansible
   playbooks:
@@ -26,7 +26,7 @@ provisioner:
   lint:
     name: ansible-lint
 scenario:
-  name: photon
+  name: debianstretch
 verifier:
   name: testinfra
   options:

@@ -8,15 +8,15 @@
     - "{{ ansible_distribution }}.yml"
     - "{{ ansible_os_family }}.yml"
     - default.yaml
-  when:
-    - ansible_facts['distribution'] == "Debian"
-    - ansible_facts['distribution_major_version'] == "8"
+  # when:
+  #   - ansible_facts['distribution'] == "Debian"
+  #   - ansible_facts['distribution_major_version'] == "8"
 - name: Install system packages
   package:
     name: '{{ system_packages }}'
     use: '{{ ansible_pkg_mgr }}'
     state: present
-  become: yes
-  when:
-    - ansible_facts['distribution'] == "Debian"
-    - ansible_facts['distribution_major_version'] == "8"
+  # become: yes
+  # when:
+  #   - ansible_facts['distribution'] == "Debian"
+  #   - ansible_facts['distribution_major_version'] == "8"
