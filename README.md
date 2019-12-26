@@ -23,22 +23,21 @@ Playbook
 
 molecule testinfra :
 
-    - MOLECULE_SCENARIO=ubuntu1604
-    - MOLECULE_SCENARIO=ubuntu1804
     - MOLECULE_SCENARIO=ubuntu1810
     - MOLECULE_SCENARIO=ubuntu1904
+    - MOLECULE_SCENARIO=ubuntu1804
+    - MOLECULE_SCENARIO=ubuntu1604
     - MOLECULE_SCENARIO=centos77    
     - MOLECULE_SCENARIO=centos76
     - MOLECULE_SCENARIO=centos74
     - MOLECULE_SCENARIO=fedora29
-    - MOLECULE_SCENARIO=alpine38
-    - MOLECULE_SCENARIO=amazonlinux
-    - MOLECULE_SCENARIO=oraclelinux
     - MOLECULE_SCENARIO=opensuseleap
     - MOLECULE_SCENARIO=opensusetumbleweed
     - MOLECULE_SCENARIO=debianjessie
     - MOLECULE_SCENARIO=debianstretch
-
+    - MOLECULE_SCENARIO=alpine
+    - MOLECULE_SCENARIO=amazonlinux
+    - MOLECULE_SCENARIO=oraclelinux
 
 License
 -------
@@ -109,8 +108,9 @@ release watch
 https://hub.docker.com/_/debian
 https://wiki.debian.org/DebianReleases
 
-https://hub.docker.com/_/ubuntu
-
 https://hub.docker.com/_/fedora
+https://hub.docker.com/_/ubuntu
+https://hub.docker.com/_/alpine
+https://hub.docker.com/_/amazonlinux
 
 ~~~~

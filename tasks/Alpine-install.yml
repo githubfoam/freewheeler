@@ -9,15 +9,9 @@
     - "{{ ansible_distribution }}.yml"
     - "{{ ansible_os_family }}.yml"
     - default.yaml
-  when:
-    - ansible_facts['distribution'] == "Alpine"
     # - ansible_facts['distribution_major_version'] == "3.8"
 - name: Install system packages
   package:
     name: '{{ system_packages }}'
     use: '{{ ansible_pkg_mgr }}'
     state: present
-  become: yes
-  when:
-    - ansible_facts['distribution'] == "Alpine"
-    # - ansible_facts['distribution_major_version'] == "3.8"

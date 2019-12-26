@@ -1,13 +1,8 @@
 ---
 # tasks file for apache
-# - name: install the latest version of Apache
-#   dnf:
-#     name: httpd
-#     state: present
-#   when:
-#     - ansible_facts['distribution'] == "Fedora"
-#     - ansible_facts['distribution_major_version'] == "29"
-
+- name: Update repositories as a separate step
+  apk:
+    update_cache: yes
 - name: Load a variable file based on the OS type, or a default if not found.
   include_vars: "{{ item }}"
   with_first_found:

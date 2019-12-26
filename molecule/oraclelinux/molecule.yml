@@ -7,7 +7,7 @@ lint:
   name: yamllint
 platforms:
   - name: oraclelinux
-    image: oraclelinux:7.6
+    image: oraclelinux:7.7
     # capabilities:
     #   - SYS_ADMIN
     # volumes:
