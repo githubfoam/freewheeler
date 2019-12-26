@@ -8,7 +8,7 @@ lint:
 platforms:
   - name: alpine11
     image: alpine:3.11
-  # - name: alpine38
+    # - name: alpine38
     # image: alpine:3.8
     # capabilities:
     #   - SYS_ADMIN
