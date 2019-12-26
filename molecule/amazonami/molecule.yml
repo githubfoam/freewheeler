@@ -7,7 +7,6 @@ lint:
   name: yamllint
 platforms:
   - name: amazonlinux
-    # image: amazonlinux:2.0.20181114
     image: amazonlinux:2.0.20191016.0
     # capabilities:
     #   - SYS_ADMIN

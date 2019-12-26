@@ -6,10 +6,8 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: alpine11
+  - name: alpine
     image: alpine:3.11
-    # - name: alpine38
-    # image: alpine:3.8
     # capabilities:
     #   - SYS_ADMIN
     # volumes:
@@ -28,8 +26,7 @@ provisioner:
   lint:
     name: ansible-lint
 scenario:
-  name: alpine11
-  # name: alpine38
+  name: alpine
 verifier:
   name: testinfra
   options:
