@@ -15,7 +15,6 @@ platforms:
     # privileged: true
 provisioner:
   name: ansible
-  no_log: False
   playbooks:
     create: ../default/create.yml
     prepare: ../default/prepare.yml
