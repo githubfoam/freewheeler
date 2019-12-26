@@ -19,7 +19,7 @@ env:
   # - MOLECULE_SCENARIO=debianbuster
   # - MOLECULE_SCENARIO=opensuseleap
   # - MOLECULE_SCENARIO=opensusetumbleweed
-  - MOLECULE_SCENARIO=alpine
+  # - MOLECULE_SCENARIO=alpine
   # - MOLECULE_SCENARIO=amazonlinux
   - MOLECULE_SCENARIO=oraclelinux
 services:
