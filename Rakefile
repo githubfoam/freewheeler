@@ -73,8 +73,8 @@ namespace :packer do
     end
 
     unless system("packer build -var-file=vars/release.json '#{file.path}'")
-      puts Rainbow("Failed to release #{sloth} to Atlas").red
-      raise "Failed to release #{sloth} to Atlas"
+      puts Rainbow("Failed to release #{sloth} to vagrant cloud").red
+      raise "Failed to release #{sloth} to vagrant cloud"
     end
   end
 end
