@@ -42,6 +42,7 @@ molecule testinfra :
 - MOLECULE_SCENARIO=alpine
 - MOLECULE_SCENARIO=amazonlinux
 - MOLECULE_SCENARIO=oraclelinux
+
 License
 -------
 
