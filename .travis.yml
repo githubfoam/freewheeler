@@ -12,4 +12,4 @@ install:
 script:
   - PATH=$(pwd)/bin:$PATH bundle exec rake
   - PATH=$(pwd)/bin:$PATH bundle exec rake --tasks
-  - PATH=$(pwd)/bin:$PATH bundle exec rake packer:release["centos-7.7-x86_64.json",sloth,9,vagrant] --trace
+  - PATH=$(pwd)/bin:$PATH bundle exec rake packer:release["centos-7.7-x86_64.json","sloth","9","vagrant"] --trace
