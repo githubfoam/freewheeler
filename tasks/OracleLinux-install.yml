@@ -1,8 +1,0 @@
----
-# tasks file for apache
-- name: install the latest version of Apache
-  yum:
-    name: httpd
-    state: present
-  no_log: False
-  when: ansible_distribution == 'OracleLinux'

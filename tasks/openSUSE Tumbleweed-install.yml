@@ -1,7 +1,0 @@
----
-- name: "Install nmap"
-  zypper:
-    name: nmap
-    state: present
-  when:
-    - ansible_facts['distribution'] == "openSUSE Tumbleweed"

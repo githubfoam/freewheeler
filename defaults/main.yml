@@ -1,6 +1,0 @@
----
-# defaults file for ansible-role-onos
-# RedHat
-firewall_disable_firewalld: false
-# Debian
-firewall_disable_ufw: false

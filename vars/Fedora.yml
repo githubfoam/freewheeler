@@ -1,5 +1,0 @@
----
-# vars for Debian systems
-system_packages:
-  - httpd
-  - httpd-tools

@@ -1,48 +1,10 @@
----
-sudo: required
-language: python
-python:
-  - "3.7"
-  # - "2.7"
+language: ruby
+rvm:
+  - 2.5
 env:
-  - MOLECULE_SCENARIO=centos77
-  - MOLECULE_SCENARIO=centos76
-  - MOLECULE_SCENARIO=centos74
-  - MOLECULE_SCENARIO=fedora29
-  - MOLECULE_SCENARIO=ubuntu1604
-  - MOLECULE_SCENARIO=ubuntu1804
-  - MOLECULE_SCENARIO=ubuntu1810
-  - MOLECULE_SCENARIO=ubuntu1904
-  - MOLECULE_SCENARIO=ubuntu2004
-  - MOLECULE_SCENARIO=debianjessie
-  - MOLECULE_SCENARIO=debianstretch
-  - MOLECULE_SCENARIO=debianbuster
-  - MOLECULE_SCENARIO=opensuseleap
-  - MOLECULE_SCENARIO=opensusetumbleweed
-  - MOLECULE_SCENARIO=alpine
-  - MOLECULE_SCENARIO=amazonlinux
-  - MOLECULE_SCENARIO=oraclelinux
-services:
-  - docker
-before_install:
-  - sudo apt-get -qq update
+  packer_version: "1.5.1"
 install:
-  - virtualenv --python=$(which python3) envmolecule
-  - source envmolecule/bin/activate
-  - pip install -r requirements.txt
+  - bundle install
+  - curl -L -o packer.zip https://releases.hashicorp.com/packer/$packer_version/packer_$packer_version_linux_amd64.zip && unzip -d bin packer.zip
 script:
-  - molecule lint --scenario-name ${MOLECULE_SCENARIO}
-  - molecule destroy --scenario-name ${MOLECULE_SCENARIO}
-  - molecule dependency --scenario-name ${MOLECULE_SCENARIO}
-  - molecule syntax --scenario-name ${MOLECULE_SCENARIO}
-  - molecule create --scenario-name ${MOLECULE_SCENARIO}
-  - molecule prepare --scenario-name ${MOLECULE_SCENARIO}
-  - molecule converge --scenario-name ${MOLECULE_SCENARIO}
-  - molecule side-effect --scenario-name ${MOLECULE_SCENARIO}
-  - molecule verify --scenario-name ${MOLECULE_SCENARIO}
-  - molecule destroy --scenario-name ${MOLECULE_SCENARIO}
-notifications:
-  email:
-    on_success: never
-    on_failure: always
-  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+  - PATH=$(pwd)/bin:$PATH bundle exec rake
