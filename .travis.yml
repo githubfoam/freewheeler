@@ -7,8 +7,9 @@ env:
 install:
   - bundle install
   # - curl -o packer.zip packer.zip https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip && unzip -d bin packer.zip
-  - curl -L -o packer.zip https://releases.hashicorp.com/packer/1.5.1/packer_1.5.1_linux_amd64.zip && unzip -d bin packer.zip
-  - packer version
+  # - curl -L -o packer.zip https://releases.hashicorp.com/packer/1.5.1/packer_1.5.1_linux_amd64.zip && unzip -d bin packer.zip
+  # - packer version
 script:
   - PATH=$(pwd)/bin:$PATH bundle exec rake
   - PATH=$(pwd)/bin:$PATH bundle exec rake --tasks
+  - PATH=$(pwd)/bin:$PATH bundle exec rake packer:release
