@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - 2.5
 env:
-  packer_version: "1.5.1"
+  packer_version=1.5.1
 install:
   - bundle install
   - curl -L -o packer.zip https://releases.hashicorp.com/packer/$packer_version/packer_$packer_version_linux_amd64.zip && unzip -d bin packer.zip
