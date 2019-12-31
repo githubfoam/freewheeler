@@ -48,7 +48,7 @@ namespace :packer do
     end
   end
 
-  desc 'Build and upload the vagrant box to Atlas'
+  desc 'Build and upload the vagrant box to vagrant cloud'
   task :release, [:template, :sloth, :version, :provider] do |_t, args|
     template = Pathname.new(args[:template])
     sloth     = args[:sloth]
