@@ -1,7 +1,7 @@
 {
   "builders": [{
     "type": "qemu",
-    "iso_url": "{{user `mirror`}}/{{ mirror_centos_major }}/isos/x86_64/CentOS-7-x86_64-NetInstall-{{user `mirror_centos_minor`}}.iso",
+    "iso_url": "{{user `mirror`}}/7/isos/x86_64/CentOS-7-x86_64-NetInstall-1908.iso",
     "iso_checksum": "{{user `iso_checksum`}}",
     "iso_checksum_type": "{{user `iso_checksum_type`}}",
     "output_directory": "output-centos-7.7-x86_64-{{build_type}}",
@@ -27,7 +27,7 @@
   }, {
     "type": "virtualbox-iso",
     "guest_os_type": "RedHat_64",
-    "iso_url": "{{user `mirror`}}/{{ mirror_centos_major }}/isos/x86_64/CentOS-7-x86_64-NetInstall-{{user `mirror_centos_minor`}}.iso",
+    "iso_url": "{{user `mirror`}}/7/isos/x86_64/CentOS-7-x86_64-NetInstall-1908.iso",
     "iso_checksum": "{{user `iso_checksum`}}",
     "iso_checksum_type": "{{user `iso_checksum_type`}}",
     "output_directory": "output-centos-7.7-x86_64-{{build_type}}",
@@ -53,7 +53,7 @@
   }, {
     "type": "vmware-iso",
     "guest_os_type": "centos-64",
-    "iso_url": "{{user `mirror`}}/{{ mirror_centos_major }}/isos/x86_64/CentOS-7-x86_64-NetInstall-{{user `mirror_centos_minor`}}.iso",
+    "iso_url": "{{user `mirror`}}/7/isos/x86_64/CentOS-7-x86_64-NetInstall-1908.iso",
     "iso_checksum": "{{user `iso_checksum`}}",
     "iso_checksum_type": "{{user `iso_checksum_type`}}",
     "output_directory": "output-centos-7.7-x86_64-{{build_type}}",
@@ -102,8 +102,6 @@
     "iso_checksum_type": "sha256",
     "memory": "512",
     "mirror": "https://mirrors.edge.kernel.org/centos",
-    "mirror_centos_major": "7",
-    "mirror_centos_minor": "1908",
     "ssh_timeout": "60m"
   }
 }
