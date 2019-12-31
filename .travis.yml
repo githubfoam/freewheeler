@@ -11,3 +11,4 @@ install:
   - packer version
 script:
   - PATH=$(pwd)/bin:$PATH bundle exec rake
+  - PATH=$(pwd)/bin:$PATH bundle exec rake release
