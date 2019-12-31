@@ -101,7 +101,7 @@
     "iso_checksum": "937bf0a7b0932817f84f7230f15ed88911bbbd85c0c958680792b7f8d8f9c1a9",
     "iso_checksum_type": "sha256",
     "memory": "512",
-    "mirror": "http://mirrors.kernel.org/centos",
+    "mirror": "https://mirrors.edge.kernel.org/centos",
     "mirror_centos_major": "7",
     "mirror_centos_minor": "1908",
     "ssh_timeout": "60m"
