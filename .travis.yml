@@ -12,6 +12,7 @@ install:
   # - packer version
 script:
   - bundle exec thor packer:validate
+  - bundle exec thor packer:clean
   # - PATH=$(pwd)/bin:$PATH bundle exec rake
   # - PATH=$(pwd)/bin:$PATH bundle exec rake --tasks
   # - PATH=$(pwd)/bin:$PATH bundle exec rake packer:release["centos-7.7-x86_64.json","slug","9","vagrant"] --trace
