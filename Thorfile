@@ -6,7 +6,7 @@ class Packer < Thor
 
   desc 'validate', 'Validate all the packer templates'
   def validate
-    Dir.chdir './packer_templates' do
+    Dir.chdir './packer' do
       templates = Dir.glob('*.json')
       templates.each do |template|
         puts "#{template}"
