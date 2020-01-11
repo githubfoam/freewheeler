@@ -49,9 +49,9 @@ namespace :packer do
   end
 
   desc 'Build and upload the vagrant box to vagrant cloud'
-  task :release, [:template, :sloth, :version, :provider] do |_t, args|
+  task :release, [:template, :slug, :version, :provider] do |_t, args|
     template = Pathname.new(args[:template])
-    sloth     = args[:sloth]
+    slug     = args[:slug]
     version  = args[:version]
     provider = args[:provider]
 
@@ -63,7 +63,7 @@ namespace :packer do
     end
 
     post_processors = json['post-processors']
-    post_processors << vagrant_cloud_post_processor_config(sloth, version, provider)
+    post_processors << vagrant_cloud_post_processor_config(slug, version, provider)
     json['post-processors'] = [post_processors]
 
     file = Tempfile.open('packer-templates') do |f|
@@ -73,8 +73,8 @@ namespace :packer do
     end
 
     unless system("packer build -var-file=vars/release.json '#{file.path}'")
-      puts Rainbow("Failed to release #{sloth} to vagrant cloud").red
-      raise "Failed to release #{sloth} to vagrant cloud"
+      puts Rainbow("Failed to release #{slug} to vagrant cloud").red
+      raise "Failed to release #{slug} to vagrant cloud"
     end
   end
 end
@@ -100,10 +100,10 @@ def available?(response)
   response.is_a?(Net::HTTPSuccess)
 end
 
-def vagrant_cloud_post_processor_config(sloth, version, provider)
+def vagrant_cloud_post_processor_config(slug, version, provider)
   {
     'type' => 'vagrant-cloud',
-    'artifact' => sloth,
+    'artifact' => slug,
     'artifact_type' => 'vagrant.box',
     "box_tag": "{{user `vm_name` }}",
     "access_token": "{{user `vagrant_cloud_token`}}",
