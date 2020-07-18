@@ -46,7 +46,9 @@ matrix:
           - bundle info pry
           - bundle exec rake -T # list all targets 
           - rake test:iso_url                 
-          - rake build:centos-7.4-x86_64:qemu 
+          - rake --tasks
+          - rake build:centos-7.4-x86_64
+          # - rake build:centos-7.4-x86_64:qemu 
           # - bundle exec rake build:openbsd-6.2-amd64
           # - test:spec:freebsd-11.1-amd64:virtualbox-iso
       after_success:
