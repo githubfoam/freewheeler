@@ -43,6 +43,7 @@ matrix:
           - sudo gem list
           - gem install bundler
           - bundle install
-          - bundle exec rake -T # list all targets                  
+          - bundle exec rake -T # list all targets 
+          - rake test:iso_url                 
       after_success:
         - deactivate
