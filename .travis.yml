@@ -1,5 +1,8 @@
 ---
 sudo: required
+language: ruby
+rvm:
+  - 2.6
 notifications:
   slack:
     on_failure: always
@@ -36,6 +39,10 @@ matrix:
       script:
           - sudo make deploy-libvirt  
           - sudo make deploy-vagrant
+          - sudo rvm list
+          - sudo gem list
+          - gem install bundler
+          - bundle install
           - bundle exec rake -T # list all targets                  
       after_success:
         - deactivate
