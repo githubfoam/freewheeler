@@ -1,11 +1,9 @@
 source "https://rubygems.org"
 
-gem "vagrant", :git => 'https://github.com/mitchellh/vagrant.git', :tag => 'v2.2.6'
-gem "veewee", "~> 0.3.12"
-gem "vagrant-windows", "~> 1.2.1"
-gem "em-winrm" # for windows!
+gem "pry"
+gem "rainbow"
 gem "rake"
-
-group :test do
-  gem "thor"
-end
+gem "rspec"
+gem "rubocop"
+gem "serverspec"
+gem "vagrant_cloud"

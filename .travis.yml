@@ -1,19 +1,41 @@
-language: ruby
-dist: bionic
-rvm:
-  - 2.5.5
-env:
-  global:
-  - PACKER_VERSION="1.5.1"
-install:
-  - bundle install
-  # - curl -o packer.zip packer.zip https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip && unzip -d bin packer.zip
-  # - curl -L -o packer.zip https://releases.hashicorp.com/packer/1.5.1/packer_1.5.1_linux_amd64.zip && unzip -d bin packer.zip
-  # - packer version
-script:
-  - bundle exec thor packer:validate
-  - bundle exec thor packer:clean
-  - bundle exec thor packer:build
-  # - PATH=$(pwd)/bin:$PATH bundle exec rake
-  # - PATH=$(pwd)/bin:$PATH bundle exec rake --tasks
-  # - PATH=$(pwd)/bin:$PATH bundle exec rake packer:release["centos-7.7-x86_64.json","slug","9","vagrant"] --trace
+---
+sudo: required
+notifications:
+  slack:
+    on_failure: always
+
+matrix:
+  fast_finish: true
+  include:
+
+    # - name: "build Vagrant and Libvirt with KVM or QEMU - bionic"
+    #   dist: bionic
+    #   language: python
+    #   python: 3.7
+    #   before_install:
+    #     - pip3 install virtualenv
+    #     - virtualenv -p $(which python3) ~venvpy3
+    #     - source ~venvpy3/bin/activate
+    #     - pip install -r requirements.txt
+    #   script:
+    #       - sudo make deploy-libvirt
+    #       - sudo make deploy-vagrant
+    #       - sudo make deploy-boxes        
+    #   after_success:
+    #     - deactivate
+
+    - name: "build packer template - bionic"
+      dist: bionic
+      language: python
+      python: 3.7
+      before_install:
+        - pip3 install virtualenv
+        - virtualenv -p $(which python3) ~venvpy3
+        - source ~venvpy3/bin/activate
+        - pip install -r requirements.txt
+      script:
+          - sudo make deploy-libvirt  
+          - sudo make deploy-vagrant
+          - bundle exec rake -T # list all targets                  
+      after_success:
+        - deactivate

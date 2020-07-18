@@ -1,0 +1,11 @@
+---
+vagrant_cloud:
+  username: vagrantfoam
+
+provider:
+  - virtualbox
+  - libvirt
+box:
+  - name: centos-7.4-x86_64
+    version: 20200718
+
