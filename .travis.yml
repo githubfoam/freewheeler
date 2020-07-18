@@ -47,8 +47,10 @@ matrix:
           - bundle exec rake -T # list all targets 
           - rake test:iso_url                 
           - rake --tasks
-          - rake build:centos-7.4-x86_64
-          # - rake build:centos-7.4-x86_64:qemu 
+          - rake build:centos-7.4-x86_64 qemu
+          # - rake build:centos-7.4-x86_64:qemu           
+          # - rake test:spec:centos-7.4-x86_64:libvirt 
+          # - rake upload:centos-7.4-x86_64-libvirt.box
           # - bundle exec rake build:openbsd-6.2-amd64
           # - test:spec:freebsd-11.1-amd64:virtualbox-iso
       after_success:
