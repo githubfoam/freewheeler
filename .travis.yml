@@ -48,6 +48,8 @@ matrix:
           - rake test:iso_url                 
           - rake --tasks
           - rake build:centos-7.4-x86_64 qemu
+          - travis_wait 30 rake build:centos-7.4-x86_64 qemu         
+          # - packer build -only qemu centos-7.4-x86_64.json
           # - rake build:centos-7.4-x86_64:qemu           
           # - rake test:spec:centos-7.4-x86_64:libvirt 
           # - rake upload:centos-7.4-x86_64-libvirt.box
